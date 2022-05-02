@@ -18,6 +18,7 @@ const Header = () => {
                             <Nav.Link as={Link} to='/car/add'>Add Car</Nav.Link>
                             <Nav.Link as={Link} to='/car/manage'>Manage Car</Nav.Link>
                             <Nav.Link as={Link} to='/myitem'>My Items</Nav.Link>
+                            <Nav.Link as={Link} to='/signin'><button className="btn btn-outline-primary">Signin</button></Nav.Link>
 
                         </Nav>
                     </Navbar.Collapse>
