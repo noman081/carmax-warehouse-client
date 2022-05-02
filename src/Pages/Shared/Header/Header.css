@@ -1,0 +1,9 @@
+.navbar a {
+    color: black !important;
+    margin-left: 18px;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: rgb(40, 43, 224) !important;
+}

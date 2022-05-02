@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Audi Q7",
+        "price": "$2,099.98",
+        "quantity": 19,
+        "picture": "https://i.ibb.co/7r1XyMy/q7.webp",
+        "brand": "Audi",
+        "dealer": "AUTOGRATE",
+        "description": "Audi Q7 is a good luxury midsize SUV . On the performance front, the Q7 impresses with its array of turbocharged engines and its fusion of a pillow-soft ride with engaging handling and nimble steering."
+    },
+    {
+        "name": "Mercedes Benz",
+        "price": "$1,157.21",
+        "quantity": 16,
+        "picture": "https://i.ibb.co/3v8crV3/benz.webp",
+        "brand": "Mercedes",
+        "dealer": "DIGIGENE",
+        "description": "Mercedes-Benz produces consumer luxury vehicles and commercial vehicles. Its first Mercedes-Benz-badged vehicles were produced in 1926. In 2018, Mercedes-Benz was the largest seller of premium vehicles in the world, having sold 2.31 million passenger cars."
+    },
+    {
+        "name": "BMW X7",
+        "price": "$2,099.08",
+        "quantity": 10,
+        "picture": "https://i.ibb.co/MktvbBk/BMW-X7.webp",
+        "brand": "BMW",
+        "dealer": "EZENTIA",
+        "description": "The 2022 BMW X7 is a seven-passenger three-row SUV that is available in two trim levels: xDrive40i and M50i. The xDrive40i is powered by a turbocharged 3.0-liter inline-six cylinder engine good for 335 horsepower and 331 lb-ft of torque"
+    },
+    {
+        "name": "Audi A6",
+        "price": "$3,429.12",
+        "quantity": 20,
+        "picture": "https://i.ibb.co/g6Xv8rK/a6.webp",
+        "brand": "Audi",
+        "dealer": "KENGEN",
+        "description": "The 2023 A6 is the quintessential Audi luxury sedan, featuring a cabin stuffed with technology that's expertly put together using premium materials."
+    },
+    {
+        "name": "Rolls Royce Wraith",
+        "price": "$1,912.27",
+        "quantity": 13,
+        "picture": "https://ibb.co/7ksgWjg",
+        "brand": "Rolls Royce",
+        "dealer": "GREEKER",
+        "description": "Targeted at the über-rich (not the Uber-dependent), the 2021 Rolls-Royce Wraith offers the utmost in luxury and comfort. All models of this dramatically styled coupe come with a 624-hp V-12 engine, rear-hinged doors, and the signature Spirit of Ecstasy hood ornament."
+    },
+    {
+        "name": "Mercedes Benz GLS",
+        "price": "$2,911.21",
+        "quantity": 10,
+        "picture": "https://i.ibb.co/b3Z5J2Z/benz-gls.webp",
+        "brand": "Mercedes",
+        "dealer": "PYRAMIA",
+        "description": "The Mercedes-Benz GLS has 1 Diesel Engine and 2 Petrol Engine on offer. The Diesel engine is 2925 cc while the Petrol engine is 2999 cc and 3982 cc . It is available with Automatic transmission. Depending upon the variant and fuel type the GLS has a mileage of ."
+    }
+]
