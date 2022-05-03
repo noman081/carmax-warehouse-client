@@ -1,0 +1,11 @@
+.manage-car {
+    border-radius: 10px;
+}
+
+.manage-car:nth-child(odd) {
+    background-color: white;
+}
+
+.manage-car:nth-child(even) {
+    background-color: rgba(135, 158, 222, 0.575);
+}

@@ -18,9 +18,7 @@ const AddCar = () => {
         axios.post('http://localhost:5000/cars', car)
             .then(result => {
                 console.log(result);
-                if (result.insertedId) {
-                    toast.success('Car added successfully!!');
-                }
+                toast.success('Car added successfully!!');
                 event.target.reset();
             });
     }
@@ -84,7 +82,7 @@ const AddCar = () => {
                     <button className="btn btn-primary" type="submit">Submit form</button>
                 </div>
             </form>
-            <ToastContainer></ToastContainer>
+            <ToastContainer />
         </div>
     );
 };
