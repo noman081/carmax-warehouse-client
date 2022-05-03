@@ -6,8 +6,10 @@ import logo from '../../../images/logo.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
+import MySpinner from '../Spinner/MySpinner';
 const Header = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading, error] = useAuthState(auth);
+
     const navigate = useNavigate();
     const handleSignOut = () => {
         signOut(auth);
