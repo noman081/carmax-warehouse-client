@@ -11,9 +11,8 @@ const Cars = () => {
     }, []);
 
     return (
-        <div className='container'>
-            <h1>Car Collection</h1>
-            <h2>I have {cars.length} cars</h2>
+        <div className='container my-3'>
+            <h3 className='text-center'>Car Collection</h3>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
                     cars.map(car => <Car key={car.name} car={car}></Car>)

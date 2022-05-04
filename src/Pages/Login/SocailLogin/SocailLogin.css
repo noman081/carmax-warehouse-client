@@ -1,0 +1,11 @@
+.socail-signin {
+    border-radius: 10px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.socail-signin:hover {
+    background-image: linear-gradient(#40a5e5, #da1efb);
+    color: white !important;
+}
