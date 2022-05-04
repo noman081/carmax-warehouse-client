@@ -15,8 +15,8 @@ const Car = ({ car }) => {
                     <h5 className="card-title">{name}</h5>
                     <h6>Price: {price}</h6>
                     <p className='d-flex justify-content-between'>
-                        <span>Supplier: {dealer}</span>
-                        <span className='me-5'>Quantity: {quantity}</span>
+                        <span><strong>Supplier:</strong> {dealer}</span>
+                        <span className='me-5'><strong>Quantity:</strong> {quantity}</span>
                     </p>
                     <p className="card-text">{description}</p>
                     <button className="btn btn-primary mt-auto" onClick={() => handleUpdateButton(_id)}>Update</button>
