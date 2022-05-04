@@ -17,7 +17,6 @@ function App() {
   return (
     <div className='d-flex flex-column min-vh-100'>
       <Header></Header>
-
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
