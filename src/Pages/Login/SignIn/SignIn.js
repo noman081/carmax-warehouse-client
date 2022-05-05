@@ -35,7 +35,7 @@ const SignIn = () => {
 
     return (
         <div style={myStyle} className='pt-5'>
-            <div className='container bg-light w-50 py-4 px-5 rounded-3 shadow-lg '>
+            <div className='container bg-light py-4 px-5 rounded-3 shadow-lg signin-form'>
                 <Form onSubmit={handleSignInForm} className='mb-2'>
                     <h1 className='text-center'>Sign In</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">

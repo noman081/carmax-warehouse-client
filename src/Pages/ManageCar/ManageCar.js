@@ -1,37 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useCars from '../../hooks/useCars';
+import ManageItem from '../ManageItem/ManageItem';
 import './ManageCar.css';
 const ManageCar = () => {
-    const [cars, setCars] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/cars')
-            .then(res => res.json())
-            .then(data => setCars(data));
-    }, []);
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure?');
-        if (proceed) {
-            fetch(`http://localhost:5000/car/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    const rest = cars.filter(car => car._id !== id);
-                    setCars(rest);
-                })
-        }
-    }
+    const [cars] = useCars();
+
     return (
         <div className='container p-4'>
             <h2 className='text-center'>Manage your cars</h2>
             {
-                cars.map(car => <div className='manage-car'>
-                    <div className='d-flex justify-content-between align-items-center p-2 px-5 mb-3'>
-                        <h5>{car.name} <img src={car.picture} alt="" width={80} className='rounded-pill' /></h5>
-                        <button className="btn btn-primary" onClick={() => handleDelete(car._id)}>Delete</button>
-
-                    </div>
-                </div>)
+                cars.map(car => <ManageItem key={car._id} car={car}></ManageItem>)
             }
+
+            <div className="text-center">
+                <Link to='/car/add'>
+                    <button className="btn btn-outline-primary mt-3 w-50">Add New Car</button>
+                </Link>
+            </div>
         </div>
     );
 };

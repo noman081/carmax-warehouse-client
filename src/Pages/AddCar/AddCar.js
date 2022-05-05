@@ -1,8 +1,12 @@
 import axios from 'axios';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddCar = () => {
+    const [user] = useAuthState(auth);
+    const email = user?.email;
     const handleAddCar = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -13,9 +17,9 @@ const AddCar = () => {
         const quantity = parseInt(event.target.quantity.value);
         const description = event.target.description.value;
 
-        const car = { name, brand, price, picture, dealer, quantity, description }
+        const car = { name, brand, price, picture, dealer, quantity, email, description }
         console.log(car);
-        axios.post('http://localhost:5000/cars', car)
+        axios.post('https://carmax.herokuapp.com/cars', car)
             .then(result => {
                 console.log(result);
                 toast.success('Car added successfully!!');
@@ -23,8 +27,9 @@ const AddCar = () => {
             });
     }
     return (
-        <div className='container'>
-            <form onSubmit={handleAddCar} className="row g-3 needs-validation " >
+        <div className='container my-3'>
+            <h3 className='text-center'>Add a new car</h3>
+            <form onSubmit={handleAddCar} className="row g-3 needs-validation bg-light p-3 mt-3 shadow-lg rounded rounded-3" >
                 <div className="col-md-4">
                     <label htmlFor="validationCustom01" className="form-label">Car Name</label>
                     <input name='name' type="text" className="form-control" id="validationCustom01" required />
@@ -79,7 +84,7 @@ const AddCar = () => {
                     </div>
                 </div>
                 <div className="col-12">
-                    <button className="btn btn-primary" type="submit">Submit form</button>
+                    <button className="btn btn-primary" type="submit">Add item</button>
                 </div>
             </form>
             <ToastContainer />

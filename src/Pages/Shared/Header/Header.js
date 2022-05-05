@@ -34,7 +34,7 @@ const Header = () => {
                                         <Nav.Link className='header-link' as={Link} to='/car/add'>Add Car</Nav.Link>
                                         <Nav.Link className='header-link' as={Link} to='/car/manage'>Manage Car</Nav.Link>
                                         <Nav.Link className='header-link' as={Link} to='/myitems'>My Items</Nav.Link>
-                                        <p>{user?.displayName}</p>
+                                        {/* <p>{user?.displayName}</p> */}
                                         <button className="btn btn-link" onClick={handleSignOut}>Signout</button>
                                     </>
                                     :

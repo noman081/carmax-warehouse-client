@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 const Inventory = () => {
     const { id } = useParams();
     const [car, setCar] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/car/${id}`)
+        fetch(`https://carmax.herokuapp.com/car/${id}`)
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car]);
 
     const handleDeliver = () => {
-        const url = `http://localhost:5000/car/${id}?quantity=${car.quantity}`;
+        const url = `https://carmax.herokuapp.com/car/${id}?quantity=${car.quantity}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -22,12 +22,13 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast.success('Car delivered successfully!');
             });
     }
     const handleAddStock = event => {
         event.preventDefault();
         const addedStock = event.target.stock.value;
-        const url = `http://localhost:5000/car/${id}?quantity=${car.quantity}&add=${addedStock}`;
+        const url = `https://carmax.herokuapp.com/car/${id}?quantity=${car.quantity}&add=${addedStock}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,6 +39,7 @@ const Inventory = () => {
             .then(data => {
                 console.log(data);
                 event.target.reset();
+                toast.success('Car added successfully!');
             });
     }
     return (
@@ -58,16 +60,21 @@ const Inventory = () => {
 
                     <Form className='mt-3' onSubmit={handleAddStock}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Add New stock</Form.Label>
+                            <Form.Label><strong>Add New stock</strong></Form.Label>
                             <Form.Control className='w-75' type='text' placeholder="Add new stock" name='stock' required />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Add
+                            Add stock
                         </Button>
                     </Form>
-
+                    <hr className='mx-auto' />
+                    <Link to='/car/manage'>
+                        <button className="btn btn-outline-primary mt-3 w-100">Manage Inventory</button>
+                    </Link>
                 </div>
             </div>
+
+            <ToastContainer />
         </div>
     );
 };

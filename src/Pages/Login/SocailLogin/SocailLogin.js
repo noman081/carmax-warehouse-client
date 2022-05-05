@@ -28,9 +28,9 @@ const SocailLogin = () => {
                 <p className='text-center'>or</p>
                 <hr />
             </div>
-            <div className='d-flex justify-content-evenly align-items-center'>
-                <button className="btn btn-light shadow-lg py-3 px-5 socail-signin d-flex justify-content-between" onClick={hanldeGoogleSignIn}><img src={google} alt="" /><span className='ms-3'>Google Sign In</span></button>
-                <button className="btn btn-light shadow-lg py-3 px-5 socail-signin"><img src={github} alt="" /><span className='ms-3'>Github Sign In</span></button>
+            <div className='d-lg-flex justify-content-evenly align-items-center text-center'>
+                <button className="btn btn-light shadow-lg socail-signin d-lg-flex justify-content-between" onClick={hanldeGoogleSignIn}><img src={google} alt="" /><span className='ms-3'>Google Sign In</span></button>
+                <button className="btn btn-light shadow-lg socail-signin"><img src={github} alt="" /><span className='ms-3'>Github Sign In</span></button>
             </div>
             <ToastContainer />
         </div>

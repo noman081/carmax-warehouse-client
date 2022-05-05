@@ -1,11 +1,29 @@
+.signin-form {
+    width: 50% !important;
+}
+
 .socail-signin {
     border-radius: 10px !important;
     font-size: 18px !important;
     font-weight: 500 !important;
     box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.2) !important;
+    padding: 15px 20px !important;
 }
 
 .socail-signin:hover {
     background-image: linear-gradient(#40a5e5, #da1efb);
     color: white !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .socail-signin {
+        font-size: 10px !important;
+        padding: 5px 10px !important;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+    .signin-form {
+        width: 80% !important;
+    }
 }
