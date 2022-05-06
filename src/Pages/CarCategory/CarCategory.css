@@ -1,6 +1,6 @@
 .category {
     border-radius: 20px;
-    box-shadow: 10px 10px 8px #888888;
+
 }
 
 .category img {
@@ -12,4 +12,5 @@
     cursor: pointer;
     background-image: linear-gradient(rgb(32, 157, 199), rgb(80, 106, 255));
     color: white;
+    box-shadow: 10px 10px 8px #888888;
 }
