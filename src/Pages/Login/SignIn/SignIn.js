@@ -65,7 +65,7 @@ const SignIn = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label className='d-flex justify-content-between'><span>Password</span><p className="btn btn-link text-decoration-none" onClick={handlePasswordReset}>Forgot Password?</p></Form.Label>
+                        <Form.Label className='d-flex justify-content-between align-items-center'><span>Password</span><p className="btn btn-link text-decoration-none" onClick={handlePasswordReset}>Forgot Password?</p></Form.Label>
                         <Form.Control type="password" placeholder="Password" name='password' required />
                     </Form.Group>
                     {

@@ -10,7 +10,6 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setCar(data));
     }, [car]);
-
     const handleDeliver = () => {
         const url = `https://carmax.herokuapp.com/car/${id}?quantity=${car.quantity}`;
         fetch(url, {
@@ -53,7 +52,16 @@ const Inventory = () => {
                     <h4>{car.name}</h4>
                     <h5>Price: {car.price}</h5>
                     <p className='mb-0'><strong>Supplier:</strong> {car.dealer}</p>
-                    <p className='mb-1'><strong>Quantity:</strong> {car.quantity}</p>
+                    <p className='mb-1'>
+                        {
+                            !car.quantity ?
+                                <h5 className='text-white bg-danger px-2 py-1 rounded-pill w-25'>Sold Out</h5>
+                                :
+                                <>
+                                    <strong>Quantity:</strong> {car.quantity}
+                                </>
+                        }
+                    </p>
                     <p>{car.description}</p>
 
                     <button className="btn btn-outline-primary w-75" onClick={handleDeliver}>Deliver</button>

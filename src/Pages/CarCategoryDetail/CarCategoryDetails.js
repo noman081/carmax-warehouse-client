@@ -4,7 +4,7 @@ import Car from '../Home/Car/Car';
 
 const CarCategoryDetails = () => {
     const { name } = useParams();
-    const url = `http://localhost:5000/cars?brand=${name}`;
+    const url = `https://carmax.herokuapp.com/cars?brand=${name}`;
     console.log(url);
     const [cars, setCars] = useState([]);
     useEffect(() => {

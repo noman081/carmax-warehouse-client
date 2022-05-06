@@ -4,7 +4,7 @@ import CarCategory from '../CarCategory/CarCategory';
 const CarCategories = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/car-categories')
+        fetch('https://carmax.herokuapp.com/car-categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     }, [])

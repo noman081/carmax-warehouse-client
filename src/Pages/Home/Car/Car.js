@@ -16,7 +16,16 @@ const Car = ({ car }) => {
                     <h6>Price: {price}</h6>
                     <p className='d-flex justify-content-between'>
                         <span><strong>Supplier:</strong> {dealer}</span>
-                        <span className='me-5'><strong>Quantity:</strong> {quantity}</span>
+                        <span className='me-5'>
+                            {
+                                !quantity ?
+                                    <h5 className='text-white bg-danger px-2 py-1 rounded-pill'>Sold Out</h5>
+                                    :
+                                    <>
+                                        <strong>Quantity:</strong> {quantity}
+                                    </>
+                            }
+                        </span>
                     </p>
                     <p className="card-text">{description}</p>
                     <button className="btn btn-primary mt-auto" onClick={() => handleUpdateButton(_id)}>Update</button>
