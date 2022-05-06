@@ -1,0 +1,15 @@
+.category {
+    border-radius: 20px;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.category img {
+    height: 200px;
+    width: 200px;
+}
+
+.category:hover {
+    cursor: pointer;
+    background-image: linear-gradient(rgb(32, 157, 199), rgb(80, 106, 255));
+    color: white;
+}

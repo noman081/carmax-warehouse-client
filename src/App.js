@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify'
 import SignUp from './Pages/Login/SignUp/SignUp';
 import Footer from './Pages/Shared/Footer/Footer';
 import Inventory from './Pages/Inventory/Inventory';
+import CarCategoryDetails from './Pages/CarCategoryDetail/CarCategoryDetails';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/category/:name' element={<CarCategoryDetails></CarCategoryDetails>}></Route>
         <Route path='/car/add' element={
           <RequireAuth>
             <AddCar></AddCar>

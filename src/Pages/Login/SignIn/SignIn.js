@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 import MySpinner from '../../Shared/Spinner/MySpinner';
 import SocailLogin from '../SocailLogin/SocailLogin';
@@ -15,6 +16,8 @@ const SignIn = () => {
         backgroundRepeat: 'no-repeat',
     };
     const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -32,6 +35,24 @@ const SignIn = () => {
     if (loading) {
         <MySpinner></MySpinner>
     }
+    const [email, setEmail] = useState('');
+    const handleEmail = event => {
+        setEmail(event.target.value);
+    }
+    function validateEmail(myEmail) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(myEmail);
+    }
+    const handlePasswordReset = () => {
+        const emailCheck = validateEmail(email);
+        if (!emailCheck) {
+            toast.warn('Please enter a valid email to reset password');
+        }
+        else {
+            sendPasswordResetEmail(email);
+            toast.success('Password reset email is sent!');
+        }
+    }
 
     return (
         <div style={myStyle} className='pt-5'>
@@ -40,16 +61,17 @@ const SignIn = () => {
                     <h1 className='text-center'>Sign In</h1>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" name='email' required />
+                        <Form.Control type="email" placeholder="Enter email" name='email' onChange={handleEmail} required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label className='d-flex justify-content-between'><span>Password</span><p className="btn btn-link text-decoration-none" onClick={handlePasswordReset}>Forgot Password?</p></Form.Label>
                         <Form.Control type="password" placeholder="Password" name='password' required />
                     </Form.Group>
                     {
                         error && <p className='text-danger'>{error.message}</p>
                     }
+
                     <Button variant="primary" type="submit">
                         Sign In
                     </Button>
@@ -57,7 +79,7 @@ const SignIn = () => {
                 <p >New to CarMax? <Link to='/signup' className="btn-link text-decoration-none">Sign Up</Link></p>
                 <SocailLogin></SocailLogin>
             </div>
-
+            <ToastContainer />
         </div>
     );
 };

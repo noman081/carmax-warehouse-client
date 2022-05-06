@@ -5,7 +5,7 @@ import ManageItem from '../ManageItem/ManageItem';
 const MyItems = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
-    const url = `http://localhost:5000/cars?email=${email}`;
+    const url = `https://carmax.herokuapp.com/cars?email=${email}`;
     const [cars, setCars] = useState([]);
     useEffect(() => {
         fetch(url)
