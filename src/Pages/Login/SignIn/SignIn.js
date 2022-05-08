@@ -30,7 +30,7 @@ const SignIn = () => {
         const password = event.target.password.value;
         await signInWithEmailAndPassword(email, password);
 
-        const { data } = await axios.post('http://localhost:5000/signin', { email });
+        const { data } = await axios.post('https://carmax.herokuapp.com/signin', { email });
         console.log(data);
         localStorage.setItem('accessToken', data);
         navigate(from, { replace: true });
