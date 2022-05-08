@@ -5,6 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 const Inventory = () => {
     const { id } = useParams();
     const [car, setCar] = useState({});
+    const [disable, setDisable] = useState(false);
     useEffect(() => {
         fetch(`https://carmax.herokuapp.com/car/${id}`)
             .then(res => res.json())
@@ -23,6 +24,9 @@ const Inventory = () => {
                 console.log(data);
                 toast.success('Car delivered successfully!');
             });
+    }
+    if (car.quantity <= 0) {
+        car.quantity = 0;
     }
     const handleAddStock = event => {
         event.preventDefault();
@@ -52,16 +56,16 @@ const Inventory = () => {
                     <h4>{car.name}</h4>
                     <h5>Price: {car.price}</h5>
                     <p className='mb-0'><strong>Supplier:</strong> {car.dealer}</p>
-                    <p className='mb-1'>
+                    <div className='mb-1'>
                         {
                             !car.quantity ?
-                                <h5 className='text-white bg-danger px-2 py-1 rounded-pill w-25'>Sold Out</h5>
+                                <p className='text-white bg-danger px-2 py-1 rounded-pill w-25 mt-1 text-center'><strong>Sold Out</strong></p>
                                 :
-                                <>
+                                <p>
                                     <strong>Quantity:</strong> {car.quantity}
-                                </>
+                                </p>
                         }
-                    </p>
+                    </div>
                     <p>{car.description}</p>
 
                     <button className="btn btn-outline-primary w-75" onClick={handleDeliver}>Deliver</button>

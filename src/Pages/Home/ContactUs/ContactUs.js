@@ -26,9 +26,9 @@ const ContactUs = () => {
         <div className="container my-4 pb-3">
             <h1 className='text-center'>Contact Us</h1>
             <div className='mt-5 d-lg-flex justify-content-around align-items-center'>
-                <div className='text-sm-center me-3'>
-                    <h2>Let's talk about everything!</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quibusdam tempore odit voluptas neque nemo libero dolor harum reprehenderit minima?</p>
+                <div className='text-sm-center me-3 mx-sm-auto'>
+                    <h2>We'd love to hear from you!</h2>
+                    <p>Whether you have question about features, pricing, trials, need a demo, or anything else, our team is ready to answer all your question.</p>
                     <img src={contact} alt="" width='50%' />
                 </div>
                 <div className='border p-4 bg-light w-75 mx-sm-auto rounded rounded-3'>
