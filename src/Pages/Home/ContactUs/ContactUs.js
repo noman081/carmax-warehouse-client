@@ -24,7 +24,7 @@ const ContactUs = () => {
     }
     return (
         <div className="container my-4 pb-3">
-            <h1 className='text-center'>Contact Us</h1>
+            <h3 className='text-center'>Contact Us</h3>
             <div className='mt-5 d-lg-flex justify-content-around align-items-center'>
                 <div className='text-sm-center me-3 mx-sm-auto'>
                     <h2>We'd love to hear from you!</h2>

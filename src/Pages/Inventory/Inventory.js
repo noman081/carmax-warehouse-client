@@ -22,7 +22,9 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                toast.success('Car delivered successfully!');
+                if (car.quantity > 0) {
+                    toast.success('Car delivered successfully!');
+                }
             });
     }
     if (car.quantity <= 0) {
