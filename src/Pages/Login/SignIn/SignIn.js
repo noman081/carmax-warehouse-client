@@ -31,13 +31,10 @@ const SignIn = () => {
         await signInWithEmailAndPassword(email, password);
 
         const { data } = await axios.post('https://carmax.herokuapp.com/signin', { email });
-        console.log(data);
         localStorage.setItem('accessToken', data);
         navigate(from, { replace: true });
     }
-    if (user) {
-        // navigate(from, { replace: true });
-    }
+
     if (loading) {
         <MySpinner></MySpinner>
     }

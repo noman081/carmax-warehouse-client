@@ -18,10 +18,10 @@ const AddCar = () => {
         const description = event.target.description.value;
 
         const car = { name, brand, price, picture, dealer, quantity, email, description }
-        console.log(car);
+        // console.log(car);
         axios.post('https://carmax.herokuapp.com/cars', car)
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 toast.success('Car added successfully!!');
                 event.target.reset();
             });

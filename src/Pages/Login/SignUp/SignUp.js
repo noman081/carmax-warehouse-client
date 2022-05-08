@@ -32,7 +32,7 @@ const SignUp = () => {
     }
     if (user) {
         user.displayName = name;
-        console.log(user);
+        // console.log(user);
         toast.success('User created successfully!');
         navigate('/');
     }

@@ -1,5 +1,3 @@
-import { async } from '@firebase/util';
-import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -24,7 +22,7 @@ const MyItems = () => {
                     .then(data => setCars(data));
             }
             catch (error) {
-                console.log(error.message);
+                // console.log(error.message);
                 if (error.response.status === 401 || error.response.status === 403) {
                     signOut(auth);
                     navigate('/signin');

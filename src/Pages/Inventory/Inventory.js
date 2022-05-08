@@ -5,7 +5,6 @@ import { toast, ToastContainer } from 'react-toastify';
 const Inventory = () => {
     const { id } = useParams();
     const [car, setCar] = useState({});
-    const [disable, setDisable] = useState(false);
     useEffect(() => {
         fetch(`https://carmax.herokuapp.com/car/${id}`)
             .then(res => res.json())
@@ -21,7 +20,7 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (car.quantity > 0) {
                     toast.success('Car delivered successfully!');
                 }
@@ -42,7 +41,7 @@ const Inventory = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 event.target.reset();
                 toast.success('Car added successfully!');
             });

@@ -13,11 +13,11 @@ const ContactUs = () => {
         const message = event.target.message.value;
 
         const contact = { name, email, subject, message };
-        console.log(contact);
+        // console.log(contact);
 
         axios.post('https://carmax.herokuapp.com/contact', contact)
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 toast.success('Messeage has sent. We will contact you soon!');
                 event.target.reset();
             })
